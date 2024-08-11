@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Moengage from "@moengage/web-sdk";
+import moengage from "@moengage/web-sdk";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebaseConfig';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ function LoginForm() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log('Login successful', user);
-      Moengage.add_unique_user_id(user); // UNIQUE_ID is used to uniquely identify a user.
+      moengage.add_unique_user_id(user); // UNIQUE_ID is used to uniquely identify a user.
       navigate('/signin-landing');  // Ensure the route exists and is correct
     } catch (error) {
       console.log('Login failed', error);
