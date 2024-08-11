@@ -26,7 +26,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleLogin}>
-      <h1>Hello byches</h1>
+      <h1>Sign In Testing</h1>
       <div>
         <label>Email:</label>
         <input
